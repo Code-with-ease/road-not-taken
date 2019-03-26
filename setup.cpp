@@ -5,14 +5,15 @@ using namespace std;
 int main()
 {
 	srand(time(NULL));
-	int x=rand()%3+1;
+	int x=1;	
+	//int x=rand()%3+1;
 	system("g++ map.cpp -o map.o");
-	if(x==1)
-	{
+	//if(x==1)
+	//{
 		string text1="test/test1.txt";
 		system("./map.o <'test/test1.txt'");
-	}
-	if(x==2)
+	//}
+	/*if(x==2)
 	{
 		string text2="test/test2.txt";
 		system("./map.o <'test/test2.txt'");
@@ -23,5 +24,5 @@ int main()
 		system("./map.o <'test/test3.txt'");
 	}
 	//system("cat out.txt");
-	return 0;
+	*/return 0;
 }

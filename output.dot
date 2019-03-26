@@ -1,0 +1,25 @@
+digraph Test {
+0 -> 4[dir=none, label="0.3",color= green, penwidth="2"];
+0 -> 14[dir=none, label="0.4",color= yellow, penwidth="2"];
+1 -> 6[dir=none, label="blocked",color= black, penwidth="4"];
+1 -> 14[dir=none, label="0.2",color= green, penwidth="2"];
+2 -> 3[dir=none, label="0.4",color= yellow, penwidth="2"];
+2 -> 5[dir=none, label="0.5",color= yellow, penwidth="2"];
+2 -> 6[dir=none, label="0.5",color= yellow, penwidth="2"];
+2 -> 7[dir=none, label="0.3",color= green, penwidth="2"];
+3 -> 7[dir=none, label="0.4",color= yellow, penwidth="2"];
+4 -> 14[dir=none, label="0.5",color= yellow, penwidth="2"];
+5 -> 8[dir=none, label="0.1",color= green, penwidth="2"];
+5 -> 10[dir=none, label="0.3",color= green, penwidth="2"];
+5 -> 14[dir=none, label="0.6",color= yellow, penwidth="2"];
+6 -> 10[dir=none, label="0.2",color= green, penwidth="2"];
+6 -> 12[dir=none, label="0",color= green, penwidth="2"];
+7 -> 12[dir=none, label="blocked",color= black, penwidth="4"];
+8 -> 9[dir=none, label="0.6",color= yellow, penwidth="2"];
+8 -> 14[dir=none, label="0.8",color= red, penwidth="2"];
+9 -> 10[dir=none, label="0.7",color= yellow, penwidth="2"];
+10 -> 11[dir=none, label="0.8",color= red, penwidth="2"];
+10 -> 12[dir=none, label="0.9",color= red, penwidth="2"];
+11 -> 12[dir=none, label="0.3",color= green, penwidth="2"];
+12 -> 13[dir=none, label="0.9",color= red, penwidth="2"];
+}

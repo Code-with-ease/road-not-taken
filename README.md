@@ -7,7 +7,9 @@ sudo apt-get install graphviz
 
 git clone https://github.com/Code-with-ease/road-not-taken.git
 
-g++ setup.cpp -std=c++11 -a.o
+cd road-not-taken
+
+g++ setup.cpp -std=c++11 -o a.o
 
 ./a.o
 ```

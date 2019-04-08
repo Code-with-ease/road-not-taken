@@ -30,6 +30,6 @@ int main()
 	fout.open("output.dot",ios_base::app);
 	fout<<"}";
 	fout.close();
-	system("dot -Tpng output.dot >out.dot.png");
+	system("dot  -Tpng output.dot >out.dot.png");
 	system("w3m out.dot.png");
 }

@@ -23,6 +23,6 @@ int main()
 		string text3="test/test3.txt";
 		system("./map.o <'test/test3.txt'");
 	}
-	//system("cat out.txt");
+	system("cat out.txt");
 	*/return 0;
 }

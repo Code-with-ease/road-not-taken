@@ -5,6 +5,8 @@ Fuzzy trafic manager using graphviz.
 ```
 sudo apt-get install graphviz
 
+sudo apt-get install w3m
+
 git clone https://github.com/Code-with-ease/road-not-taken.git
 
 cd road-not-taken

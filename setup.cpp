@@ -5,24 +5,24 @@ using namespace std;
 int main()
 {
 	srand(time(NULL));
-	int x=1;	
+	int x=2;	
 	//int x=rand()%3+1;
 	system("g++ map.cpp -o map.o");
 	//if(x==1)
 	//{
-		string text1="test/test1.txt";
+	/*	string text1="test/test1.txt";
 		system("./map.o <'test/test1.txt'");
-	//}
-	/*if(x==2)
+	//}*/
+	if(x==2)
 	{
 		string text2="test/test2.txt";
 		system("./map.o <'test/test2.txt'");
 	}
-	if(x==3)
+	/*if(x==3)
 	{
 		string text3="test/test3.txt";
 		system("./map.o <'test/test3.txt'");
-	}
-	system("cat out.txt");
-	*/return 0;
+	}*/
+	//system("cat out.txt");
+	return 0;
 }

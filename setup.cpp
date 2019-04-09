@@ -4,8 +4,8 @@
 using namespace std;
 int main()
 {
-	srand(time(NULL));
-	int x=rand()%3+1;
+	srand(time(NULL));	
+	int x=2;
 	system("g++ map.cpp -o map.o");
 	if(x==1)
 	{

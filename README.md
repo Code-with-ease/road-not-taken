@@ -24,7 +24,7 @@ git checkout branchname
 edit your code
 
 git merge master
-
+```
 ### Before you Push
 ```
 git pull origin master

@@ -162,21 +162,6 @@ int main()
 
   }
    
-
-    /*for(int i=0;i<V;i++)
-    {
-        for(int j=0;j<V;j++)
-        {
-            if(adjMatrix[i][j]==INF)cout<<"INF"<<"    ";
-            else
-            cout<<adjMatrix[i][j]<<"    ";
-            
-        }
-        cout<<endl;
-
-  }*/
-
-
    FloydWarshell(adjMatrix2,distance,7,12);
    
     

@@ -1,6 +1,7 @@
 #include<iostream>
 #include<cstdlib>
 #include<time.h>
+#include<fstream>
 using namespace std;
 int main()
 {
@@ -11,6 +12,16 @@ int main()
 	system("g++ map.cpp -o map.o");
 	//if(x==1)
 	//{
+		//-- MANAV
+		int source,destination;
+		cin>>source>>destination;
+		
+		ofstream fout;
+		fout.open("test/test1.txt",ios::app);
+		fout<<source<<" "<<destination<<" ";
+		fout.close();
+
+		// // -----
 		string text1="test/test1.txt";
 		system("./map.o <'test/test1.txt'");
 	     

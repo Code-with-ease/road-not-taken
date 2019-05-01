@@ -13,7 +13,6 @@ int main()
 	//{
 		string text1="test/test1.txt";
 		system("./map.o <'test/test1.txt'");
-	     cout<<"hello";
 	     
 
 	//}

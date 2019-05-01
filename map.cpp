@@ -147,8 +147,9 @@ int main()
                 adjMatrix2[i][j]=(distance[i][j])/((int)(10-10*adjMatrix2[i][j]));
         }
   }
-
-   FloydWarshell(adjMatrix2,distance,7,12);
+    int source,destination;
+    cin>>source>>destination;
+   FloydWarshell(adjMatrix2,distance,source,destination);
 
 
     ofstream fout;

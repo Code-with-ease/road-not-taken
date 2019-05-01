@@ -15,6 +15,33 @@ g++ setup.cpp -std=c++11 -o a.o
 
 ./a.o
 ```
+### create and do work in your own branch
+```
+git branch banchname
+
+git checkout branchname
+
+edit your code
+
+git merge master
+```
+### Before you Push
+```
+git pull origin master
+
+git add .
+
+git commit -m "commit message"
+
+git push origin master
+```
+
+### if not correctly pulled
+```
+git stash
+
+git pull origin master
+```
 
 ### Developer Team
 [Akshara Nigam](https://github.com/aksharanigam1112)

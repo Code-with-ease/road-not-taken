@@ -1,7 +1,7 @@
 #include "dotupdate.h"
 using namespace std;
 
-void update(int a, int b, double val)
+void update(int a, int b, double val,double dist,double time)
 {
 	if(val>=0 && val<=1)
 	{
@@ -11,19 +11,19 @@ void update(int a, int b, double val)
 		{
 			if(val<=0.3)
 			{
-				fout<<a<<" -> "<<b<<"[label=\""<<val<<"\",color= green, penwidth=\"1\"];"<<endl;
+				fout<<a<<" -> "<<b<<"[dir=none, label=\""<<val<<" ,"<<dist<<" ,"<<time<<"\",color= green, penwidth=\"1\"];"<<endl;
 			}
 			else if(val>0.3 && val<=0.7)
 			{
-				fout<<a<<" -> "<<b<<"[label=\""<<val<<"\",color= yellow, penwidth=\"1\"];"<<endl;
+				fout<<a<<" -> "<<b<<"[dir=none, label=\""<<val<<" ,"<<dist<<" ,"<<time<<"\",color= yellow, penwidth=\"1\"];"<<endl;
 			}
 			else if(val>0.7 && val<1)
 			{
-				fout<<a<<" -> "<<b<<"[label=\""<<val<<"\",color= red, penwidth=\"1\"];"<<endl;
+				fout<<a<<" -> "<<b<<"[dir=none, label=\""<<val<<" ,"<<dist<<" ,"<<time<<"\",color= red, penwidth=\"1\"];"<<endl;
 			}
 			else
 			{
-				fout<<a<<" -> "<<b<<"[label=\"blocked\",color= black, penwidth=\"3\"];"<<endl;
+				fout<<a<<" -> "<<b<<"[dir=none, label=\"blocked\",color= black, penwidth=\"2\"];"<<endl;
 			}
 		}
 		fout.close();

@@ -23,7 +23,9 @@ git checkout branchname
 
 edit your code
 
-git merge master
+git checkout branchname
+
+git merge branchname
 ```
 ### Before you Push
 ```

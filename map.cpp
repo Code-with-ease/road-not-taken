@@ -31,25 +31,13 @@ void printSolution(double cost[N][N], double path[N][N],int i , int j)
         }
         cout << endl;
     }
-
-  /*  for(int v=0;v<N;v++)
-    {
-        for(int u=0;u<N;u++)
-        {
-            if(distance[v][u]==INF)
-                cout<<"INF";
-            else
-                cout<<distance[v][u]<<" ";
-        }
-        cout<<endl;
-    }*/
     cout<<"The min cost path:- ";
     printPath(path, i, j);
 }
 
 void FloydWarshell(double adjMatrix[][N],double distance[][N],int i,int j)
 {
-    double cost[N][N], path[N][N] ,dist_path[N][N];
+    double cost[N][N], path[N][N];
     double temp1 , temp2;
 
     for (int v = 0; v < N; v++)
@@ -61,17 +49,14 @@ void FloydWarshell(double adjMatrix[][N],double distance[][N],int i,int j)
             if (v == u)
                 {
                     path[v][u] = 0;
-                    dist_path[v][u]=0;
                 }
             else if (cost[v][u] != INF)
                 {
                     path[v][u] = v;
-                    dist_path[v][u]=v;
                 }
             else
                 {
                     path[v][u] = -1;
-                    dist_path[v][u]=-1;
                 }
         }
     }
@@ -88,21 +73,13 @@ void FloydWarshell(double adjMatrix[][N],double distance[][N],int i,int j)
                 if (cost[v][k] != INF && cost[k][u] != INF &&  distance[v][k]!=INF && distance[u][k]!=INF && temp1*temp2 < cost[v][u]*distance[v][u] )
                 {
                     cost[v][u] = cost[v][k] + cost[k][u];
-                    distance[v][u]=distance[v][k]+distance[k][u];
-                    path[v][u] = path[k][u];
-                    dist_path[v][u]=dist_path[k][u];
+                    distance[v][u] = distance[v][k]+distance[k][u];
+                    path[v][u] = path[k][u]; 
                 }
-           /* if(distance[v][k]!=INF && distance[u][k]!=INF && distance[v][u]>distance[v][k]+distance[k][u])
-                {
-                    distance[v][u]=distance[v][k]+distance[k][u];
-                    dist_path[v][u]=dist_path[k][u];
-                }*/
             }
         }
     }
     printSolution(cost, path,i,j);
-    cout<<"The min distance path:- ";
-    printPath(dist_path,i,j);
     cout<<endl;
 }
 

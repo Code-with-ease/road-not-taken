@@ -49,7 +49,7 @@ git pull origin master
 ```
 copy your changed files first for safety somewhere else
 
-git remote add upstream httos://github.com/Code-with-ease/rode-not-taken.git
+git remote add upstream https://github.com/Code-with-ease/rode-not-taken.git
 
 git pull --rebase upstream master
 

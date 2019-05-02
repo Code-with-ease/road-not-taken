@@ -23,7 +23,9 @@ git checkout branchname
 
 edit your code
 
-git merge master
+git checkout branchname
+
+git merge branchname
 ```
 ### Before you Push
 ```
@@ -41,6 +43,17 @@ git push origin master
 git stash
 
 git pull origin master
+```
+
+## if x commit ahead and y commit behind
+```
+copy your changed files first for safety somewhere else
+
+git remote add upstream https://github.com/Code-with-ease/rode-not-taken.git
+
+git pull --rebase upstream master
+
+git push --force-with-lease origin master
 ```
 
 ### Developer Team

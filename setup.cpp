@@ -17,13 +17,21 @@ int main()
 		cin>>source>>destination;
 		
 		ofstream fout;
-		fout.open("test/test1.txt",ios::app);
+		fout.open("test/i.txt",ios::out);
 		fout<<source<<" "<<destination<<" ";
 		fout.close();
 
+
+		ifstream inFile;
+		inFile.open("test/test1.txt"); // source
+		ofstream outFile;
+		outFile.open("test/i.txt",ios::app); // destination
+
+		outFile << inFile.rdbuf();
+
 		// // -----
-		string text1="test/test1.txt";
-		system("./map.o <'test/test1.txt'");
+		string text1="test/i.txt";
+		system("./map.o <'test/i.txt'");
 	     
 
 	//}

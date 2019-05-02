@@ -85,7 +85,8 @@ void FloydWarshell(double adjMatrix[][N],double distance[][N],int i,int j)
 
 int main()
 {
-
+    int source,destination;
+    cin>>source>>destination;
     int n;
     cin>>n;
     double adjMatrix[N][N] ,distance[N][N],adjMatrix2[N][N];
@@ -124,8 +125,7 @@ int main()
                 adjMatrix2[i][j]=(distance[i][j])/((int)(10-10*adjMatrix2[i][j]));
         }
   }
-    int source,destination;
-    cin>>source>>destination;
+    
    FloydWarshell(adjMatrix2,distance,source,destination);
 
 

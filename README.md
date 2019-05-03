@@ -1,5 +1,5 @@
 # Road not Taken
-Fuzzy trafic manager using graphviz.
+Path Suggester.
 
 ## How to install on your ubuntu system
 ```

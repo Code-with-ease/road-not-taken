@@ -8,12 +8,11 @@ int main()
 	srand(time(NULL));
 	int x=1;	
 	//int x=rand()%3+1;
-	system("ls");
 	system("g++ map.cpp -o map.o");
 	//if(x==1)
 	//{
 		//-- MANAV
-		int source,destination;
+		/*int source,destination;
 		cin>>source>>destination;
 		
 		ofstream fout;
@@ -21,10 +20,10 @@ int main()
 		fout<<source<<" "<<destination<<" ";
 		fout.close();
 
-
-		ifstream inFile;
-		inFile.open("test/test1.txt"); // source
-		ofstream outFile;
+	*/
+		//ifstream inFile;
+		//inFile.open("test/test1.txt"); // source
+	/*	ofstream outFile;
 		outFile.open("test/i.txt",ios::app); // destination
 
 		outFile << inFile.rdbuf();
@@ -32,7 +31,8 @@ int main()
 		// // -----
 		string text1="test/i.txt";
 		system("./map.o <'test/i.txt'");
-	     
+		*/
+		system("./map.o <test/test1.txt");
 
 	//}
 	/*if(x==2)

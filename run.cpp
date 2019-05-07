@@ -18,10 +18,10 @@ int main()
 	fout<<s<<" "<<d;
 	fout.close();
 	system("g++ floyd.cpp -std=c++11 -o floyd.o");
-	system("./floyd.o <map.txt");
 	system("mv init.dot.png test");
 	for(int i=0;i<3;i++)
 	{
+		system("./floyd.o <map.txt");
 		usleep(9000000);
 		system("g++ refresh.cpp -std=c++11 -o refresh.o");
 		cout<<"\nrefresh compiled";
@@ -29,7 +29,6 @@ int main()
 		cout<<"\nmap refresed successfully"<<endl;
 	}
 	system("cd test");
-	system("ls");
 	system("mv test/init.dot.png test/../");
 	system("cd ..");
 }

@@ -2,24 +2,51 @@
 #include<cstdlib>
 #include<cstdlib>
 #include<fstream>
+#include<vector>
 #include "dotupdate.cpp"
 #include<stdio.h>
 #define N 15
 #define INF 99999
 using namespace std;
 
-void printPath(double path[][N], int v, int u)
+int sou,dest;
+
+void watch_time(double ti,double adjMatrix[][N],vector<int> &path_vec)
+{
+    ti=0;
+    for(int i=1;i<path_vec.size();i++)
+    {
+        ti+=adjMatrix[sou][path_vec[i]];
+        cout<<"TIME"<<adjMatrix[sou][path_vec[i]]<<endl;
+        cout<<"S D"<<sou<<" "<<path_vec[i]<<endl;
+        sou=path_vec[i];
+
+    }
+    ti+=adjMatrix[sou][dest];
+        cout<<"TIME"<<ti<<adjMatrix[sou][dest]<<endl;
+        cout<<"S D"<<sou<<" "<<dest<<endl;
+        //cout<<"TIME"<<ti<<endl;
+        
+
+}
+void printPath(double adjMatrix2[][N],double path[][N], int v, int u,vector<int> &path_vec)
 {
     if (path[v][u] == v)
         return;
-
-    printPath(path, v, path[v][u]);
+    //cout<<"cost"<<cost[v][u]<<endl;
+    printPath(adjMatrix2,path,v,path[v][u],path_vec);
+    path_vec.push_back(path[v][u]);
     cout << path[v][u] << " ";
 }
 
-void printSolution(double cost[N][N], double path[N][N],int i , int j)
+void printSolution(double adjMatrix2[][N], double cost[N][N],double path[N][N],int i , int j)
 {
-    for (int v = 0; v < N; v++)
+    vector<int> path_vect;
+    path_vect.push_back(i);
+    ti=0;
+   sou=i;
+   dest=j;
+    /*for (int v = 0; v < N; v++)
     {
         for (int u = 0; u < N; u++)
         {
@@ -30,9 +57,11 @@ void printSolution(double cost[N][N], double path[N][N],int i , int j)
         }
         cout << endl;
     }
-
+*/
+    cout<<"THE TIME TAKEN IS "<<cost[i][j]<<endl;
     cout<<"The min cost path:- ";
-    printPath(path, i, j);
+    printPath(adjMatrix2,path,i, j,path_vect);
+    watch_time(ti,adjMatrix2,path_vect);
 }
 
 void FloydWarshell(double adjMatrix[][N],double distance[][N],int i,int j)
@@ -74,14 +103,17 @@ void FloydWarshell(double adjMatrix[][N],double distance[][N],int i,int j)
                 {
                     cost[v][u] = cost[v][k] + cost[k][u];
                     distance[v][u]=distance[v][k]+distance[k][u];
+                    
                     path[v][u] = path[k][u];
                 }
             }
         }
     }
-    printSolution(cost, path,i,j);
+    printSolution(adjMatrix, cost, path,i,j);
     cout<<endl;
 }
+
+
 int main()
 {
 	int n;
@@ -113,12 +145,23 @@ int main()
 	        for(int j=0;j<N;j++)
 	        {
 	            if(distance[i][j]!=INF || adjMatrix2[i][j]!=INF)
-	                adjMatrix2[i][j]=(distance[i][j])/((int)(10-10*adjMatrix2[i][j]));
+	                adjMatrix2[i][j]=(distance[i][j])/((int)(80-80*adjMatrix2[i][j]));
 	        }
     	}
     	int source,destination;
 	cin>>source>>destination;
- 	FloydWarshell(adjMatrix2,distance,source,destination);
+
+    /*cout<<"THE MATRIX OF TIME"<<endl;
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<N;j++)
+        {
+            cout<<adjMatrix2[i][j]<<" ";
+        }
+        cout<<endl; 
+    }*/
+ 	
+    FloydWarshell(adjMatrix2,distance,source,destination);
 	
     ofstream fout;
     fout.open("map.txt");
@@ -139,6 +182,7 @@ int main()
     	}
     	fout<<endl;
     }
+
     fout<<source<<" "<<destination;   //Writes 0 0 in map.txt
 }
 

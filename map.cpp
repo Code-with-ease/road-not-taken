@@ -38,9 +38,9 @@ int main()
     {
 
            cin>>distance[i][j];
-           if(distance[i][j]==1000 || adjMatrix2[i][j]==INF)
+           if(distance[i][j]==10000 || adjMatrix2[i][j]==INF)
            {
-                fout<<"1000"<<" ";
+                fout<<"10000"<<" ";
                         distance[i][j]=INF;
            }
 	       else

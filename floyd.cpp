@@ -43,9 +43,7 @@ void printSolution(double adjMatrix2[][N], double cost[N][N],double path[N][N],i
 {
     vector<int> path_vect;
     path_vect.push_back(i);
-    ti=0;
-   sou=i;
-   dest=j;
+    int ti=0 , sou=i , dest=j;
     /*for (int v = 0; v < N; v++)
     {
         for (int u = 0; u < N; u++)
@@ -163,26 +161,29 @@ int main()
  	
     FloydWarshell(adjMatrix2,distance,source,destination);
 	
-    ofstream fout;
-    fout.open("map.txt");
-    fout<<n<<endl;
+    ofstream fout1;
+    fout1.open("map.txt");
+    fout1<<n<<endl;
     for(int i=0;i<n;i++)
     {
     	for(int j=0;j<n;j++)
     	{
-    		fout<<adjMatrix[i][j]<<" ";
+    		fout1<<adjMatrix[i][j]<<" ";
     	}
-    	fout<<endl;
+    	fout1<<endl;
     }
     for(int i=0;i<n;i++)
     {
-    	for(int j=0;j<n;j++)
-    	{
-    		fout<<distance[i][j]<<" ";
-    	}
-    	fout<<endl;
+	 for(int j=0;j<n;j++)
+	 {
+	 	if(distance[i][j]==10000 ||adjMatrix2[i][j]==INF)
+			fout1<<"10000"<<" ";
+		else
+			fout1<<distance[i][j]<<" ";
+	 }
+	 fout1<<endl;
     }
 
-    fout<<source<<" "<<destination;   //Writes 0 0 in map.txt
+    fout1<<source<<" "<<destination;  
 }
 

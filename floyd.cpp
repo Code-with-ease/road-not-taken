@@ -43,7 +43,9 @@ void printSolution(double adjMatrix2[][N], double cost[N][N],double path[N][N],i
 {
     vector<int> path_vect;
     path_vect.push_back(i);
-    int ti=0 , sou=i , dest=j;
+    int ti=0;
+   sou=i;
+   dest=j;
     /*for (int v = 0; v < N; v++)
     {
         for (int u = 0; u < N; u++)
@@ -184,6 +186,6 @@ int main()
 	 fout1<<endl;
     }
 
-    fout1<<source<<" "<<destination;  
+    fout1<<source<<" "<<destination;   //Writes 0 0 in map.txt
 }
 

@@ -32,7 +32,7 @@ int main()
     {
 
            cin>>distance[i][j];
-           if(distance[i][j]==10000 || adjMatrix2[i][j]==INF)
+           if(distance[i][j]==1000 || adjMatrix2[i][j]==INF)
                 distance[i][j]=INF;
            //if(adjMatrix2[i][j]==-1)distance[i][j]=-1;
     }

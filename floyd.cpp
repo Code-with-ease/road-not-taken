@@ -17,23 +17,20 @@ void watch_time(double ti,double adjMatrix[][N],vector<int> &path_vec)
     for(int i=1;i<path_vec.size();i++)
     {
         ti+=adjMatrix[sou][path_vec[i]];
-        cout<<"TIME"<<adjMatrix[sou][path_vec[i]]<<endl;
-        cout<<"S D"<<sou<<" "<<path_vec[i]<<endl;
+        cout<<"TIME "<<adjMatrix[sou][path_vec[i]]<<endl;
+        cout<<"S D "<<sou<<" "<<path_vec[i]<<endl;
         sou=path_vec[i];
 
     }
     ti+=adjMatrix[sou][dest];
-        cout<<"TIME"<<ti<<adjMatrix[sou][dest]<<endl;
-        cout<<"S D"<<sou<<" "<<dest<<endl;
-        //cout<<"TIME"<<ti<<endl;
-        
-
+        cout<<"TIME "<<ti<<adjMatrix[sou][dest]<<endl;
+        cout<<"S D "<<sou<<" "<<dest<<endl;
 }
+
 void printPath(double adjMatrix2[][N],double path[][N], int v, int u,vector<int> &path_vec)
 {
     if (path[v][u] == v)
         return;
-    //cout<<"cost"<<cost[v][u]<<endl;
     printPath(adjMatrix2,path,v,path[v][u],path_vec);
     path_vec.push_back(path[v][u]);
     cout << path[v][u] << " ";
@@ -61,6 +58,7 @@ void printSolution(double adjMatrix2[][N], double cost[N][N],double path[N][N],i
     cout<<"THE TIME TAKEN IS "<<cost[i][j]<<endl;
     cout<<"The min cost path:- ";
     printPath(adjMatrix2,path,i, j,path_vect);
+    cout<<endl;
     watch_time(ti,adjMatrix2,path_vect);
 }
 
@@ -133,7 +131,6 @@ int main()
 	 {
 	    for(int j=0;j<N;j++)
 	    {
-
 		   cin>>distance[i][j];
 		   if(distance[i][j]==1000 || adjMatrix2[i][j]==INF)
 		        distance[i][j]=INF;
@@ -186,6 +183,6 @@ int main()
 	 fout1<<endl;
     }
 
-    fout1<<source<<" "<<destination;   //Writes 0 0 in map.txt
+    fout1<<source<<" "<<destination;  
 }
 
